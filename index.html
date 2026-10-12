@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>СТРУМ — оренда, продаж і збірка електробайків у Києві</title>
+  <meta name="description" content="СТРУМ — електробайки для міста й бездоріжжя: оренда від 350 ₴ на день, продаж, кастомні збірки та сервіс. Демонстраційний проєкт.">
+  <meta name="theme-color" content="#0f0f0e">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#top" class="logo" aria-label="СТРУМ — на початок">
+        <svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#d4ff3a"/><path d="M22 6 L11 22 h8 l-3 12 l13 -17 h-8z" fill="#0f0f0e"/></svg>
+        <span>СТРУМ</span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="#models">Моделі</a>
+        <a href="#rent">Оренда</a>
+        <a href="#custom">Кастом</a>
+        <a href="#service">Сервіс</a>
+        <a href="#faq">Питання</a>
+      </nav>
+      <a href="#contact" class="btn btn--small header__cta">Записатися</a>
+      <button class="burger" aria-label="Меню" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <p class="eyebrow"><span class="dot"></span> Електробайки · Київ</p>
+          <h1 class="hero__title">Заряджений<br>на <span class="hl">кожен</span> день</h1>
+          <p class="hero__lead">Беремо в оренду, продаємо й збираємо під вас електробайки для міста, доставки та бездоріжжя. Тест-драйв безкоштовний, обслуговування — у власній майстерні.</p>
+          <div class="hero__actions">
+            <a href="#models" class="btn">Обрати байк</a>
+            <a href="#rent" class="btn btn--ghost">Орендувати від 350 ₴</a>
+          </div>
+          <dl class="hero__stats">
+            <div><dt>до 110 км</dt><dd>на одному заряді</dd></div>
+            <div><dt>75 км/год</dt><dd>максимальна швидкість</dd></div>
+            <div><dt>1 рік</dt><dd>гарантія на збірку</dd></div>
+          </dl>
+        </div>
+        <div class="hero__art" id="hero-art"></div>
+      </div>
+      <div class="marquee" aria-hidden="true"><div class="marquee__track">
+        <span>Тест-драйв безкоштовно</span><span>⚡</span><span>Оренда від 1 дня</span><span>⚡</span><span>Збірка за 10 днів</span><span>⚡</span><span>Сервіс і діагностика</span><span>⚡</span>
+        <span>Тест-драйв безкоштовно</span><span>⚡</span><span>Оренда від 1 дня</span><span>⚡</span><span>Збірка за 10 днів</span><span>⚡</span><span>Сервіс і діагностика</span><span>⚡</span>
+      </div></div>
+    </section>
+
+    <!-- ФОРМАТИ -->
+    <section class="section container">
+      <div class="section__head">
+        <p class="eyebrow">01 — Формат</p>
+        <h2 class="section__title">Під яку задачу байк?</h2>
+      </div>
+      <div class="formats">
+        <a class="format" href="#models" data-filter-link="city">
+          <span class="format__num">A</span>
+          <h3>Місто й доставка</h3>
+          <p>Тихі й легкі байки для щоденних поїздок, роботи курʼєром і коротких маршрутів без заторів.</p>
+          <span class="format__link">Міські моделі →</span>
+        </a>
+        <a class="format" href="#models" data-filter-link="offroad">
+          <span class="format__num">B</span>
+          <h3>Бездоріжжя</h3>
+          <p>Потужні мотори, довга підвіска й зубасті шини для лісу, карʼєрів і гірських стежок.</p>
+          <span class="format__link">Ендуро-моделі →</span>
+        </a>
+        <a class="format format--accent" href="#custom">
+          <span class="format__num">C</span>
+          <h3>Своя збірка</h3>
+          <p>Обираєте раму, мотор, батарею й колір — ми збираємо, налаштовуємо й видаємо готовий байк.</p>
+          <span class="format__link">Відкрити конфігуратор →</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- МОДЕЛІ -->
+    <section class="section container" id="models">
+      <div class="section__head section__head--row">
+        <div><p class="eyebrow">02 — Модельний ряд</p><h2 class="section__title">У наявності</h2></div>
+        <div class="segmented" id="type-filter" role="tablist" aria-label="Тип байка"></div>
+      </div>
+      <div class="models" id="models-grid"></div>
+    </section>
+
+    <!-- ОРЕНДА -->
+    <section class="section section--dark" id="rent">
+      <div class="container rent">
+        <div>
+          <p class="eyebrow">03 — Оренда</p>
+          <h2 class="section__title">Порахуйте оренду</h2>
+          <p class="muted">Шолом, зарядка й інструктаж — у вартості. Що довша оренда, то дешевша доба.</p>
+          <ul class="checks">
+            <li>Від 1 до 30 днів</li>
+            <li>−10% від 3 днів, −15% від 7 днів</li>
+            <li>Повертається застава 5 000 ₴</li>
+          </ul>
+        </div>
+        <form class="calc" id="rent-form">
+          <label class="label">Модель
+            <select class="field" name="bike" id="rent-bike"></select>
+          </label>
+          <div class="label">Кількість днів: <b id="days-out">3</b>
+            <input type="range" name="days" min="1" max="30" value="3" id="rent-days" aria-label="Кількість днів">
+          </div>
+          <fieldset class="label"><legend>Додатково</legend>
+            <div class="chips" id="rent-extras"></div>
+          </fieldset>
+          <div class="calc__result">
+            <div class="calc__row"><span>Оренда</span><span id="r-base"></span></div>
+            <div class="calc__row calc__row--discount" id="r-discount-row"><span id="r-discount-label"></span><span id="r-discount"></span></div>
+            <div class="calc__row"><span>Додатково</span><span id="r-extras"></span></div>
+            <div class="calc__row calc__row--total"><span>Разом</span><span id="r-total"></span></div>
+            <p class="muted small" id="r-deposit"></p>
+          </div>
+          <button type="button" class="btn btn--block" data-book="rent">Забронювати</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- КОНФІГУРАТОР -->
+    <section class="section container" id="custom">
+      <div class="section__head">
+        <p class="eyebrow">04 — Кастом</p>
+        <h2 class="section__title">Зберіть свій байк</h2>
+      </div>
+      <div class="config">
+        <div class="config__preview">
+          <div class="config__art" id="config-art"></div>
+          <dl class="config__specs">
+            <div><dt>Швидкість</dt><dd id="c-speed"></dd></div>
+            <div><dt>Запас ходу</dt><dd id="c-range"></dd></div>
+            <div><dt>Термін збірки</dt><dd>10 днів</dd></div>
+          </dl>
+        </div>
+        <form class="config__form" id="config-form">
+          <div class="option"><span class="option__title">Рама</span><div class="tiles" data-group="frame"></div></div>
+          <div class="option"><span class="option__title">Мотор</span><div class="tiles" data-group="motor"></div></div>
+          <div class="option"><span class="option__title">Батарея</span><div class="tiles" data-group="battery"></div></div>
+          <div class="option"><span class="option__title">Колір</span><div class="swatches" id="swatches"></div></div>
+          <div class="option"><span class="option__title">Опції</span><div class="chips" id="config-extras"></div></div>
+          <div class="config__total">
+            <div><span class="muted small">Вартість збірки</span><b id="c-total"></b></div>
+            <button type="button" class="btn" data-book="custom">Замовити збірку</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ЯК ЦЕ ПРАЦЮЄ -->
+    <section class="section container">
+      <div class="section__head"><p class="eyebrow">05 — Як це працює</p><h2 class="section__title">Від заявки до першої поїздки</h2></div>
+      <ol class="steps">
+        <li><b>Заявка</b><p>Залишаєте контакти на сайті або телефонуєте — передзвонимо за 15 хвилин.</p></li>
+        <li><b>Тест-драйв</b><p>Пробуєте 2–3 моделі на нашому майданчику, безкоштовно.</p></li>
+        <li><b>Налаштування</b><p>Підганяємо посадку, потужність і режими під вашу вагу та стиль.</p></li>
+        <li><b>Поїхали</b><p>Видаємо байк з інструктажем. Сервіс — у нашій майстерні.</p></li>
+      </ol>
+    </section>
+
+    <!-- СЕРВІС -->
+    <section class="section container" id="service">
+      <div class="service">
+        <div class="service__card service__card--big">
+          <p class="eyebrow">06 — Сервіс</p>
+          <h2 class="section__title">Майстерня, а не лише магазин</h2>
+          <p class="muted">Ремонтуємо й обслуговуємо електробайки будь-яких марок: від заміни колодок до перепрошивки контролера.</p>
+          <a href="#contact" class="btn btn--ghost">Записатися на сервіс</a>
+        </div>
+        <div class="service__card"><span class="service__icon">🔋</span><h3>Діагностика батареї</h3><p>Перевіряємо кожну банку й BMS, балансуємо, відновлюємо ємність.</p><b>від 600 ₴</b></div>
+        <div class="service__card"><span class="service__icon">⚙️</span><h3>ТО після сезону</h3><p>Гальма, ланцюг, підвіска, затяжка й чистка всіх вузлів.</p><b>від 1200 ₴</b></div>
+        <div class="service__card"><span class="service__icon">💻</span><h3>Налаштування контролера</h3><p>Режими потужності, обмеження швидкості, рекуперація.</p><b>від 800 ₴</b></div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section container" id="faq">
+      <div class="section__head"><p class="eyebrow">07 — Питання</p><h2 class="section__title">Часті запитання</h2></div>
+      <div class="faq">
+        <details><summary>Чи потрібні права, щоб їздити на електробайку?</summary><p>Для моделей до 25 км/год права не потрібні. Для потужніших правила залежать від класифікації транспортного засобу. Перед покупкою ми детально проконсультуємо, що потрібно саме для вашої моделі.</p></details>
+        <details><summary>Що потрібно для оренди?</summary><p>Паспорт або ID-картка та застава 5 000 ₴. Заставу повертаємо одразу, коли ви повертаєте байк.</p></details>
+        <details><summary>Скільки заряджається батарея?</summary><p>Від 4 до 7 годин від звичайної розетки — залежно від ємності. Швидка зарядка скорочує цей час удвічі.</p></details>
+        <details><summary>Чи можна їздити в дощ?</summary><p>Так, електрика має захист від бризок. Але не варто проїжджати глибокі калюжі й мити байк під тиском.</p></details>
+        <details><summary>Чи є розстрочка?</summary><p>Так, на покупку та кастомну збірку: до 12 місяців без переплат.</p></details>
+      </div>
+    </section>
+
+    <!-- КОНТАКТИ -->
+    <section class="section container" id="contact">
+      <div class="contact">
+        <div>
+          <p class="eyebrow">08 — Контакти</p>
+          <h2 class="section__title">Запишіться на тест-драйв</h2>
+          <ul class="contact__list">
+            <li><span>Адреса</span>Київ, вул. Електриків, 7 (демо-адреса)</li>
+            <li><span>Графік</span>Щодня 10:00–20:00</li>
+            <li><span>Телефон</span>+380 00 000 00 00</li>
+          </ul>
+        </div>
+        <form class="booking" id="booking" novalidate>
+          <div class="booking__summary" id="booking-summary" hidden></div>
+          <label class="label">Імʼя<input class="field" name="name" autocomplete="name" required><span class="error"></span></label>
+          <label class="label">Телефон<input class="field" name="phone" type="tel" autocomplete="tel" placeholder="+380" required><span class="error"></span></label>
+          <label class="label">Що цікавить
+            <select class="field" name="topic">
+              <option value="test">Тест-драйв</option>
+              <option value="rent">Оренда</option>
+              <option value="buy">Покупка</option>
+              <option value="custom">Кастомна збірка</option>
+              <option value="service">Сервіс</option>
+            </select>
+          </label>
+          <label class="label">Зручна дата<input class="field" name="date" type="date"></label>
+          <label class="label">Коментар<textarea class="field" name="comment" rows="3" maxlength="500"></textarea></label>
+          <label class="check"><input type="checkbox" name="agree" required> Погоджуюся на обробку даних для звʼязку</label>
+          <button class="btn btn--block">Надіслати заявку</button>
+          <p class="muted small">Демо-форма: дані нікуди не відправляються.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="#top" class="logo"><svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#d4ff3a"/><path d="M22 6 L11 22 h8 l-3 12 l13 -17 h-8z" fill="#0f0f0e"/></svg><span>СТРУМ</span></a>
+      <p class="muted small">© <span id="year"></span> СТРУМ. Демонстраційний проєкт для портфоліо: бренд, ціни й контакти вигадані.</p>
+      <a href="#top" class="muted small">Нагору ↑</a>
+    </div>
+  </footer>
+
+  <div class="modal" id="toast" role="status" hidden></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
